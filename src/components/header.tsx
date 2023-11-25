@@ -18,13 +18,13 @@ export function Header() {
             height={48}
           />
         </div>
-        <Heading as='h2'>
+        <Heading as='h2' className='hidden md:flex'>
           Freshly
         </Heading>
       </div>
       
       {/* Navigation */}
-      <nav className='hidden md:flex lg:gap-12 gap-6 py-[15px] lg:mr-auto'>
+      <nav className='hidden sm:flex lg:gap-12 gap-6 py-[15px] lg:mr-auto'>
         <Link href='/'>
           <Text>
             Recipes
@@ -49,12 +49,16 @@ export function Header() {
       
       {/* Actions */}
       <div className='flex gap-4'>
-        <div className='flex justify-center items-center'>
-          <button type="button" className='hidden lg:flex justify-center items-center gap-2 rounded-full py-[10px] px-4 bg-[#EC4700]'>
+        <div className='hidden lg:flex justify-center items-center'>
+          <button type="button" className='justify-center items-center gap-2 rounded-full py-[10px] px-4 bg-[#EC4700]'>
             <Text className='text-white'>
               + Add Recipe
             </Text>
           </button>
+        </div>
+
+        <div className='flex items-center sm:hidden'>
+          <Menu size={24} className='cursor-pointer' />
         </div>
 
         <Image 
