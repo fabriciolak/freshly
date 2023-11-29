@@ -12,8 +12,17 @@ const config: Config = {
         container: '1140px',
       },
       fontSize: {
+        'xs': ['12px', '15px'],
+        '2xs': ['18px', '23px'],
+        'lg': ['19px', '24px'],
         'base': ['16px', '20px'],
         '2xl': ['24px', '31px'],
+      },
+      colors: {
+        'recipe-card': ''
+      },
+      backgroundImage: {
+        card: 'url("https://thecookingjar.com/wp-content/uploads/2022/07/parmesan-meatballs-1.jpg")',
       }
     },
   },
