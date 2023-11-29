@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Menu } from 'lucide-react'
 import { Heading } from './heading'
 import { Text } from './text'
-import Link from 'next/link'
 
 export function Header() {
   return (
@@ -11,12 +11,14 @@ export function Header() {
       {/* Logo */}
       <div className='flex items-center justify-center gap-3 lg:mr-[61px]'>
         <div>
-          <Image 
-            src='/freshly.svg'
-            alt='Freshly Logo'
-            width={48}
-            height={48}
-          />
+          <Link href='/'>
+            <Image 
+              src='/freshly.svg'
+              alt='Freshly Logo'
+              width={48}
+              height={48}
+            />
+          </Link>
         </div>
         <Heading as='h2' className='hidden md:flex'>
           Freshly
