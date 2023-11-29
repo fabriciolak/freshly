@@ -3,7 +3,7 @@ import { tw } from "@/utils/ts-merge"
 import { spaceGrotesk } from "@/styles/fonts"
 
 interface RecipeCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  imageUrl: string
+  imageUrl?: string
 }
 
 const Root = React.forwardRef<HTMLDivElement, RecipeCardProps>(({ className, children, imageUrl, ...props }, ref) => {

@@ -1,4 +1,3 @@
-import { Header } from "@/components/header"
 import { Heading } from "@/components/heading"
 import { Tag } from "@/components/tag"
 import { Text } from "@/components/text"
@@ -76,9 +75,7 @@ const author_recipes = [
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-      
+    <main>      
       <section className="w-full xl:w-container mx-auto flex flex-col gap-6 mt-[39px] px-8 xl:px-0">
         <Heading as="h2">
           Popular Recipes
@@ -273,6 +270,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }

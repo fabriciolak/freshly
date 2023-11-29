@@ -10,10 +10,12 @@ const config: Config = {
     extend: {
       width: {
         container: '1140px',
+        recipe: '760px',
       },
       fontSize: {
         'xs': ['12px', '15px'],
-        '2xs': ['18px', '23px'],
+        '1xs': ['14px', '18px'],
+        '2xs': ['18px', '24px'],
         'lg': ['19px', '24px'],
         'base': ['16px', '20px'],
         '2xl': ['24px', '31px'],

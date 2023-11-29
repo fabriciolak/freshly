@@ -41,8 +41,8 @@ type ProfilePrimitive = React.HTMLAttributes<HTMLDivElement>
 interface ProfileRootProps extends ProfilePrimitive {}
 
 interface ProfilePictureProps extends ProfilePrimitive {
-  authorImage: string
-  authorName: string
+  authorImage?: string
+  authorName?: string
 }
 
 interface ProfileActionsProps extends ProfilePrimitive {}
@@ -61,7 +61,7 @@ const Picture = React.forwardRef<HTMLDivElement, ProfilePictureProps>(({ childre
   return (
     <div className={tw(["flex items-center gap-2", className])} ref={ref} {...props}>
       <Image
-        src={authorImage}
+        src={authorImage ?? ''}
         alt="picture"
         width={64}
         height={64}
