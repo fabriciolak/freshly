@@ -198,7 +198,8 @@ export default function Recipe() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {related.map((recipe, index) => (
-            <RecipeCard.Root 
+            <RecipeCard.Root
+              slug='taco-salad'
               className="flex-col gap-[10px] h-[260px] from-transparent to-transparent group hover:from-black/80 transition duration-300"
               imageUrl={recipe.image}
               key={recipe.id}

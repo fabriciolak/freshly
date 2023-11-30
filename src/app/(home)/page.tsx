@@ -11,26 +11,101 @@ const cards = [
   {
     id: 1,
     title: 'Easy Meatballs with Arugula',
+    slug: 'easy-meatballs-with-arugula',
     tags: ['Italian', 'Fried', 'Main Course'],
-    imageUrl: '/images/meatballs.jpg',
+    image: '/images/easy-meatballs-with-arugula.jpeg',
   },
   {
-    id: 2,
-    title: 'Best Steak & Veggies',
-    tags: ['American', 'Meat', 'Veggie'],
-    imageUrl: '/images/steak.webp',
+    title: "Best Steak & Veggies",
+    slug: "best-steak-&-veggies",
+    tags: ["American", "Meat", "Veggies"],
+    image: "/images/best-steak-&-veggies.jpeg"
   },
   {
     id: 3,
-    title: 'Baked Eggs in a Blanket',
-    tags: ['American', 'Meat', 'Veggie'],
-    imageUrl: '/images/eggs.jpg',
+    title: "Baked Eggs in a Blanket",
+    slug: "baked-eggs-in-a-blanket",
+    tags: ["American", "Meat", "Veggies"],
+    image: "/images/baked-eggs-in-a-blanket.jpeg"
   },
   {
     id: 4,
-    title: 'Home-made Raspberry Ice Cream',
-    tags: ['American', 'Meat', 'Veggie'],
-    imageUrl: '/images/ice-cream.jpg',
+    title: "Home-made Raspberry Ice Cream",
+    slug: "home-made-raspberry-ice-cream",
+    tags: ["American", "Meat", "Veggies"],
+    image: "/images/home-made-raspberry-ice-cream.jpeg"
+  }
+]
+
+const UNDER_30_MINUTES = [
+  {
+    id: 1,
+    image: '/images/under-30-1.jpeg',
+  },
+  {
+    id: 2,
+    image: '/images/under-30-2.jpeg',
+  },
+  {
+    id: 3,
+    image: '/images/under-30-3.jpeg',
+  },
+  {
+    id: 4,
+    image: '/images/under-30-4.jpeg',
+  },
+]
+
+const popular_categories = [
+  {
+    id: 1,
+    title: 'Meats',
+    image: "/meats.jpeg"
+  },
+  {
+    id: 2,
+    title: 'Vegetarian',
+    image: "/vegetarian.jpeg"
+  },
+  {
+    id: 3,
+    title: 'Paleo',
+    image: "/paleo.jpeg"
+  },
+  {
+    id: 4,
+    title: 'Drinks',
+    image: "/drinks.jpeg"
+  },
+  {
+    id: 5,
+    title: 'Snacks',
+    image: "/snacks.jpeg"
+  },
+  {
+    id: 6,
+    title: 'Breakfast',
+    image: "/breakfast.jpeg"
+  },
+  {
+    id: 7,
+    title: 'Creative',
+    image: "/creative.jpeg"
+  },
+  {
+    id: 7,
+    title: 'Pizza',
+    image: "/pizza.jpeg"
+  },
+  {
+    id: 8,
+    title: 'Desserts',
+    image: "/desserts.jpeg"
+  },
+  {
+    id: 9,
+    title: 'Ice Cream',
+    image: "/ice-cream.jpeg"
   }
 ]
 
@@ -83,7 +158,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((item, i) => (
-            <RecipeCard.Root imageUrl={item.imageUrl} key={item.id}>
+            <RecipeCard.Root slug={item.slug} imageUrl={item.image} key={item.id}>
               <RecipeCard.Actions>
                 <RecipeCard.ActionItem>
                   <Heart size={20} className="cursor-pointer text-white" />
@@ -128,8 +203,8 @@ export default function Home() {
 
         <div className="w-full flex flex-col gap-y-6">
           <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-10 gap-y-6">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <RecipeCategorie key={i} />
+            {popular_categories.map((categorie, i) => (
+              <RecipeCategorie key={categorie.id} categorieName={categorie.title} image={categorie.image} />
             ))}
           </div>
         </div>
@@ -141,8 +216,8 @@ export default function Home() {
         </Heading>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cards.map((item, i) => (
-            <RecipeCard.Root className="from-transparent" imageUrl={item.imageUrl} key={item.id} />
+          {UNDER_30_MINUTES.map((recipe, _) => (
+            <RecipeCard.Root slug="under-30-minutes" className="from-transparent" imageUrl={recipe.image} key={recipe.id} />
           ))}
         </div>
       </section>

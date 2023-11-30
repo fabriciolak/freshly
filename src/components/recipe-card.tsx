@@ -1,23 +1,28 @@
 import React from "react"
 import { tw } from "@/utils/ts-merge"
 import { spaceGrotesk } from "@/styles/fonts"
+import Link from "next/link"
 
 interface RecipeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imageUrl?: string
+  slug: string
 }
 
-const Root = React.forwardRef<HTMLDivElement, RecipeCardProps>(({ className, children, imageUrl, ...props }, ref) => {
+const Root = React.forwardRef<HTMLDivElement, RecipeCardProps>(({ className, children, imageUrl, slug, ...props }, ref) => {
   return (
-    <div 
-      className={tw(["relative w-full h-[24.375rem] overflow-hidden rounded-3xl", className, spaceGrotesk.className])} 
-      ref={ref} 
-      style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-      {...props}
-    >
-      <div className={tw(["absolute flex flex-col h-full w-full px-5 py-6 bg-gradient-to-t to-black/25 from-black"], className)}>
-        {children}
+    <Link replace href={`/recipe/${slug}`}>
+      <div 
+        className={tw(["relative w-full h-[24.375rem] overflow-hidden rounded-3xl", className, spaceGrotesk.className])} 
+        ref={ref} 
+        style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        {...props}
+      >
+        <div className={tw(["absolute flex flex-col h-full w-full px-5 py-6 bg-gradient-to-t to-black/25 from-black"], className)}>
+          
+            {children}
+        </div>
       </div>
-    </div>
+    </Link>
   )
 })
 
